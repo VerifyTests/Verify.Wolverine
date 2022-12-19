@@ -86,3 +86,8 @@ Will result in:
 ```
 <sup><a href='/src/Tests/Tests.HandlerTest.verified.txt#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.HandlerTest.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
+
+
+## Icon
+
+[Wolverine](https://thenounproject.com/term/wolverine/3386573/) designed by [Phạm Thanh Lộc](https://thenounproject.com/thanhloc1009/) from [The Noun Project](https://thenounproject.com/).
