@@ -1,1 +1,10 @@
-﻿
+﻿{
+  CorrelationId: Guid_1,
+  Sent: [
+    {
+      Message: {
+        Property: Property Value
+      }
+    }
+  ]
+}

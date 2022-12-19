@@ -10,16 +10,19 @@ public class Tests
     [Fact]
     public Task HandlerTest()
     {
-        var messageContext = new RecordingMessageContext();
-        var handler = new Handler(messageContext);
+        var context = new RecordingMessageContext();
+        var handler = new Handler(context);
         handler.Handle(new Message());
-        return Verify(messageContext);
+        return Verify(context);
     }
 
     #endregion
 }
 
-public record Message();
+#region Handler
+public record Message;
+
+public record Response(string Property);
 
 public class Handler
 {
@@ -29,8 +32,8 @@ public class Handler
         this.context = context;
 
     public void Handle(Message message) =>
-        context.SendAsync(new Response());
+        context.SendAsync(new Response("Property Value"));
 }
 
-public record Response;
+#endregion
 
