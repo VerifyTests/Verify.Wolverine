@@ -3,7 +3,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ddi2145ncdpw0wx0?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-Wolverine)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Wolverine.svg)](https://www.nuget.org/packages/Verify.Wolverine/)
 
-Adds [Verify](https://github.com/VerifyTests/Verify) support for verifying [Moq](https://github.com/moq/moq4) types.
+Adds [Verify](https://github.com/VerifyTests/Verify) support for verifying [Wolverine](https://github.com/JasperFx/wolverine) types.
 
 
 ## NuGet package
