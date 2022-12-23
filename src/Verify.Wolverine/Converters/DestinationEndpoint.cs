@@ -22,12 +22,9 @@ public class DestinationEndpoint : IDestinationEndpoint
         return Task.FromResult(new Acknowledgement());
     }
 
-    public async Task<T> InvokeAsync<T>(object message, CancellationToken cancellation = default, TimeSpan? timeout = null)
-        where T : class
-    {
-        var invoke = await context.AddInvoke<T>(message, timeout, EndpointName);
-        return invoke!;
-    }
+    public Task<T> InvokeAsync<T>(object message, CancellationToken cancellation = default, TimeSpan? timeout = null)
+        where T : class =>
+        context.AddInvoke<T>(message, timeout, EndpointName);
 
     public Uri Uri => new(EndpointName);
     public string EndpointName { get; }
