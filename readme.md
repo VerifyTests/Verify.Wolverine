@@ -53,6 +53,8 @@ public class Handler
 
 ## Test
 
+Pass in instance of `RecordingMessageContext` in to the `Handle` method and then `Verify` that instance.
+
 <!-- snippet: HandlerTest -->
 <a id='snippet-handlertest'></a>
 ```cs
