@@ -8,15 +8,24 @@ public class Tests
     #region HandlerTest
 
     [Fact]
-    public Task HandlerTest()
+    public async Task HandlerTest()
     {
         var context = new RecordingMessageContext();
         var handler = new Handler(context);
-        handler.Handle(new Message());
-        return Verify(context);
+        await handler.Handle(new Message());
+        await Verify(context);
     }
 
     #endregion
+
+    [Fact]
+    public async Task AllTest()
+    {
+        var context = new RecordingMessageContext();
+        var handler = new AllHandler(context);
+        await handler.Handle(new Message());
+        await Verify(context);
+    }
 }
 
 #region Handler
@@ -31,9 +40,52 @@ public class Handler
     public Handler(IMessageContext context) =>
         this.context = context;
 
-    public void Handle(Message message) =>
+    public ValueTask Handle(Message message) =>
         context.SendAsync(new Response("Property Value"));
 }
 
 #endregion
 
+
+public class AllHandler
+{
+    IMessageContext context;
+
+    public AllHandler(IMessageContext context) =>
+        this.context = context;
+
+    public async ValueTask Handle(Message message)
+    {
+        await context.SendAsync(
+            new Response("Property Value"),
+            new DeliveryOptions
+            {
+                DeliverWithin = TimeSpan.FromDays(1)
+            });
+        await context.RespondToSenderAsync(
+            new Response("Property Value"));
+        await context.InvokeAsync(
+            new Response("Property Value"),
+            timeout: TimeSpan.FromDays(2));
+        await context.InvokeAsync<Guid>(
+            new Response("Property Value"),
+            timeout: TimeSpan.FromDays(2));
+        await context.BroadcastToTopicAsync(
+            "topic",
+            new Response("Property Value"),
+            new DeliveryOptions
+            {
+                DeliverWithin = TimeSpan.FromDays(3)
+            });
+        var destination = context.EndpointFor("endpoint");
+        await destination.SendAsync(
+            new Response("Property Value"),
+            new DeliveryOptions
+            {
+                DeliverWithin = TimeSpan.FromDays(1)
+            });
+        await destination.InvokeAsync(
+            new Response("Property Value"),
+            timeout: TimeSpan.FromDays(2));
+    }
+}

@@ -1,0 +1,59 @@
+﻿{
+  CorrelationId: Guid_1,
+  Broardcasted: [
+    {
+      Topic: topic,
+      Message: {
+        Property: Property Value
+      },
+      Options: {
+        DeliverBy: DateTimeOffset_1
+      }
+    }
+  ],
+  Invoked: [
+    {
+      Message: {
+        Property: Property Value
+      },
+      Timeout: 2.00:00:00
+    },
+    {
+      Message: {
+        Property: Property Value
+      },
+      Timeout: 2.00:00:00
+    },
+    {
+      Message: {
+        Property: Property Value
+      },
+      Timeout: 2.00:00:00,
+      Endpoint: endpoint
+    }
+  ],
+  Responses: [
+    {
+      Property: Property Value
+    }
+  ],
+  Sent: [
+    {
+      Message: {
+        Property: Property Value
+      },
+      Options: {
+        DeliverBy: DateTimeOffset_2
+      }
+    },
+    {
+      Message: {
+        Property: Property Value
+      },
+      Options: {
+        DeliverBy: DateTimeOffset_3
+      },
+      Endpoint: endpoint
+    }
+  ]
+}

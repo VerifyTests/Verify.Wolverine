@@ -43,11 +43,11 @@ public class Handler
     public Handler(IMessageContext context) =>
         this.context = context;
 
-    public void Handle(Message message) =>
+    public ValueTask Handle(Message message) =>
         context.SendAsync(new Response("Property Value"));
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L22-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-handler' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L31-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-handler' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -57,12 +57,12 @@ public class Handler
 <a id='snippet-handlertest'></a>
 ```cs
 [Fact]
-public Task HandlerTest()
+public async Task HandlerTest()
 {
     var context = new RecordingMessageContext();
     var handler = new Handler(context);
-    handler.Handle(new Message());
-    return Verify(context);
+    await handler.Handle(new Message());
+    await Verify(context);
 }
 ```
 <sup><a href='/src/Tests/Tests.cs#L8-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-handlertest' title='Start of snippet'>anchor</a></sup>
