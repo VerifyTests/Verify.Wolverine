@@ -1,0 +1,10 @@
+﻿{
+  CorrelationId: Guid_1,
+  Invoked: [
+    {
+      Message: {
+        Property: value
+      }
+    }
+  ]
+}

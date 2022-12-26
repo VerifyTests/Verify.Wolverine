@@ -32,10 +32,6 @@ Given the handler:
 <!-- snippet: Handler -->
 <a id='snippet-handler'></a>
 ```cs
-public record Message;
-
-public record Response(string Property);
-
 public class Handler
 {
     IMessageContext context;
@@ -47,7 +43,7 @@ public class Handler
         context.SendAsync(new Response("Property Value"));
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L31-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-handler' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L31-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-handler' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -63,7 +59,7 @@ public async Task HandlerTest()
 {
     var context = new RecordingMessageContext();
     var handler = new Handler(context);
-    await handler.Handle(new Message());
+    await handler.Handle(new Message("value"));
     await Verify(context);
 }
 ```
@@ -88,6 +84,59 @@ Will result in:
 ```
 <sup><a href='/src/Tests/Tests.HandlerTest.verified.txt#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.HandlerTest.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
+
+
+
+### AddInvokeResult
+
+When using [Request/Reply](https://wolverine.netlify.app/guide/messaging/message-bus.html#request-reply) via `IMessageBus.InvokeAsync<T>` the message context is required to supply the "Reply" part. This can be one using `RecordingMessageContext.AddInvokeResult<T>`.
+
+For example, given the handler:
+
+<!-- snippet: InvokeAsyncHandler -->
+<a id='snippet-invokeasynchandler'></a>
+```cs
+public class Handler
+{
+    IMessageContext context;
+
+    public Handler(IMessageContext context) =>
+        this.context = context;
+
+    public async Task Handle(Message message)
+    {
+        var request = new Request(message.Property);
+        var response = await context.InvokeAsync<Response>(request);
+        Trace.WriteLine(response.Property);
+    }
+}
+```
+<sup><a href='/src/Tests/InvokeDelegateUsage.cs#L27-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-invokeasynchandler' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+The result can be set:
+
+<!-- snippet: InvokeDelegateTest -->
+<a id='snippet-invokedelegatetest'></a>
+```cs
+[Fact]
+public async Task HandlerTest()
+{
+    var context = new RecordingMessageContext();
+    context.AddInvokeResult<Response>(
+        message =>
+        {
+            var request = (Request) message;
+            return new Response(request.Property);
+        });
+    var handler = new Handler(context);
+    await handler.Handle(new Message("value"));
+    await Verify(context);
+}
+```
+<sup><a href='/src/Tests/InvokeDelegateUsage.cs#L8-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-invokedelegatetest' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
 
 
 ## Icon

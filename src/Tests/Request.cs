@@ -1,0 +1,1 @@
+﻿public record Request(string Property);

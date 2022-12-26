@@ -12,7 +12,7 @@ public class Tests
     {
         var context = new RecordingMessageContext();
         var handler = new Handler(context);
-        await handler.Handle(new Message());
+        await handler.Handle(new Message("value"));
         await Verify(context);
     }
 
@@ -23,15 +23,12 @@ public class Tests
     {
         var context = new RecordingMessageContext();
         var handler = new AllHandler(context);
-        await handler.Handle(new Message());
+        await handler.Handle(new Message("value"));
         await Verify(context);
     }
 }
 
 #region Handler
-public record Message;
-
-public record Response(string Property);
 
 public class Handler
 {
@@ -45,7 +42,6 @@ public class Handler
 }
 
 #endregion
-
 
 public class AllHandler
 {
