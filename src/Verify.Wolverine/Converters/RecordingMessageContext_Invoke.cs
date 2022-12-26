@@ -20,10 +20,10 @@ public partial class RecordingMessageContext
 
     Dictionary<Type, Func<object, object>> invokeResults = new();
 
-    public void SetInvokeResult<T>(T result) where T : notnull =>
-        SetInvokeResult(_ => result);
+    public void AddInvokeResult<T>(T result) where T : notnull =>
+        AddInvokeResult(_ => result);
 
-    public void SetInvokeResult<T>(InvokeResult<T> invokeResult)
+    public void AddInvokeResult<T>(InvokeResult<T> invokeResult)
         where T : notnull =>
         invokeResults[typeof(T)] = _ => invokeResult(_);
 
