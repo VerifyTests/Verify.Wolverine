@@ -72,7 +72,6 @@ Will result in:
 <a id='snippet-Tests.HandlerTest.verified.txt'></a>
 ```txt
 {
-  CorrelationId: Guid_1,
   Sent: [
     {
       Message: {
@@ -82,7 +81,7 @@ Will result in:
   ]
 }
 ```
-<sup><a href='/src/Tests/Tests.HandlerTest.verified.txt#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.HandlerTest.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.HandlerTest.verified.txt#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.HandlerTest.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

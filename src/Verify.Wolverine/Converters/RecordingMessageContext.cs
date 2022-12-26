@@ -15,6 +15,7 @@ public partial class RecordingMessageContext :
         CorrelationId = Guid.NewGuid().ToString();
     }
 
+    [Argon.JsonIgnore]
     public string? CorrelationId { get; set; }
     public Envelope? Envelope { get; }
 }

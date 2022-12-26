@@ -1,5 +1,4 @@
 ﻿{
-  CorrelationId: Guid_1,
   Broardcasted: [
     {
       Topic: topic,

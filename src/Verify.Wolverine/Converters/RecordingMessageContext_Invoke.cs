@@ -34,7 +34,6 @@ public partial class RecordingMessageContext
     {
         invoked.Add(new(message, timeout, endpoint));
 
-
         var type = typeof(T);
         if (invokeResults.TryGetValue(type, out var func))
         {
