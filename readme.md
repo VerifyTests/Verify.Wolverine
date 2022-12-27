@@ -6,6 +6,12 @@
 Adds [Verify](https://github.com/VerifyTests/Verify) support for verifying [Wolverine](https://github.com/JasperFx/wolverine) types.
 
 
+Uses the same pattern as the [Wolverine TestMessageContext](https://wolverine.netlify.app/guide/testing.html#testmessagecontext) with some additions:
+
+ * All messaging parameters, eg DeliveryOptions and timeout, can be asserted.
+ * Support for `IMessageBus.InvokeAsync<T>` via [AddInvokeResult](#addinvokeresult).
+
+
 ## NuGet package
 
 https://nuget.org/packages/Verify.Wolverine/
