@@ -5,7 +5,6 @@
 
 Adds [Verify](https://github.com/VerifyTests/Verify) support for verifying [Wolverine](https://github.com/JasperFx/wolverine) types.
 
-
 Uses the same pattern as the [Wolverine TestMessageContext](https://wolverine.netlify.app/guide/testing.html#testmessagecontext) with some additions:
 
  * All messaging parameters, eg DeliveryOptions and timeout, can be asserted.
@@ -91,7 +90,6 @@ Will result in:
 <!-- endSnippet -->
 
 
-
 ### AddInvokeResult
 
 When using [Request/Reply](https://wolverine.netlify.app/guide/messaging/message-bus.html#request-reply) via `IMessageBus.InvokeAsync<T>` the message context is required to supply the "Reply" part. This can be one using `RecordingMessageContext.AddInvokeResult<T>`.
@@ -141,7 +139,6 @@ public async Task HandlerTest()
 ```
 <sup><a href='/src/Tests/InvokeDelegateUsage.cs#L8-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-invokedelegatetest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
-
 
 
 ## Icon
