@@ -9,7 +9,7 @@ public partial class RecordingMessageContext
 
     public IReadOnlyList<Invoked> Invoked => invoked;
 
-    public Task InvokeAsync(object message, CancellationToken cancellation = default, TimeSpan? timeout = null)
+    public Task InvokeAsync(object message, Cancellation cancellation = default, TimeSpan? timeout = null)
     {
         AddInvoke(message, timeout);
         return Task.CompletedTask;
@@ -27,7 +27,7 @@ public partial class RecordingMessageContext
         where T : notnull =>
         invokeResults[typeof(T)] = _ => invokeResult(_);
 
-    public Task<T> InvokeAsync<T>(object message, CancellationToken cancellation = default, TimeSpan? timeout = null) =>
+    public Task<T> InvokeAsync<T>(object message, Cancellation cancellation = default, TimeSpan? timeout = null) =>
         AddInvoke<T>(message, timeout);
 
     internal Task<T> AddInvoke<T>(object message, TimeSpan? timeout = null, string? endpoint = null)
