@@ -18,4 +18,5 @@ public partial class RecordingMessageContext :
     [Argon.JsonIgnore]
     public string? CorrelationId { get; set; }
     public Envelope? Envelope { get; }
+    public string? TenantId { get; set; }
 }
