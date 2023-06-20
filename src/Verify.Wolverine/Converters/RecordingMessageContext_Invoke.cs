@@ -30,9 +30,18 @@ public partial class RecordingMessageContext
     public Task<T> InvokeAsync<T>(object message, Cancel cancel = default, TimeSpan? timeout = null) =>
         AddInvoke<T>(message, timeout);
 
-    internal Task<T> AddInvoke<T>(object message, TimeSpan? timeout = null, string? endpoint = null)
+    public Task InvokeForTenantAsync(string tenantId, object message, Cancel cancel = default, TimeSpan? timeout = null)
     {
-        invoked.Add(new(message, timeout, endpoint));
+        invoked.Add(new(message, timeout, null, tenantId));
+        return Task.CompletedTask;
+    }
+
+    public Task<T> InvokeForTenantAsync<T>(string tenantId, object message, Cancel cancel = default, TimeSpan? timeout = null) =>
+        AddInvoke<T>(message, timeout,null,tenantId);
+
+    internal Task<T> AddInvoke<T>(object message, TimeSpan? timeout = null, string? endpoint = null, string? tenant = null)
+    {
+        invoked.Add(new(message, timeout, endpoint, tenant));
 
         var type = typeof(T);
         if (invokeResults.TryGetValue(type, out var func))
@@ -55,4 +64,4 @@ public partial class RecordingMessageContext
     }
 }
 
-public record Invoked(object Message, TimeSpan? Timeout = null, string? Endpoint = null);
+public record Invoked(object Message, TimeSpan? Timeout = null, string? Endpoint = null, string? Tenant = null);
