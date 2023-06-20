@@ -16,13 +16,13 @@ public class DestinationEndpoint : IDestinationEndpoint
         return ValueTask.CompletedTask;
     }
 
-    public Task<Acknowledgement> InvokeAsync(object message, Cancellation cancellation = default, TimeSpan? timeout = null)
+    public Task<Acknowledgement> InvokeAsync(object message, Cancel cancel = default, TimeSpan? timeout = null)
     {
         context.AddInvoke(message, timeout, EndpointName);
         return Task.FromResult(new Acknowledgement());
     }
 
-    public Task<T> InvokeAsync<T>(object message, Cancellation cancellation = default, TimeSpan? timeout = null)
+    public Task<T> InvokeAsync<T>(object message, Cancel cancel = default, TimeSpan? timeout = null)
         where T : class =>
         context.AddInvoke<T>(message, timeout, EndpointName);
 
