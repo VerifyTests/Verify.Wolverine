@@ -2,6 +2,7 @@
 <Project>
   <PropertyGroup>
     <Version>1.1.0</Version>
+    <LangVersion>preview</LangVersion>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageTags>Wolverine, Verify</PackageTags>
     <Description>Adds Verify (https://github.com/VerifyTests/Verify) support for verifying Wolverine (https://wolverine.netlify.app/)</Description>
