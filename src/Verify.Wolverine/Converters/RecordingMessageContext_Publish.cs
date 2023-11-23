@@ -2,7 +2,7 @@
 
 public partial class RecordingMessageContext
 {
-    List<Published> published = new();
+    List<Published> published = [];
     public IReadOnlyList<Published> Published => published;
 
     public ValueTask PublishAsync<T>(T message, DeliveryOptions? options = null)

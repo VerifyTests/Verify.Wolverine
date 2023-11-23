@@ -2,7 +2,7 @@
 
 public partial class RecordingMessageContext
 {
-    List<object> responses = new();
+    List<object> responses = [];
     public IReadOnlyList<object> Responses => responses;
 
     public ValueTask RespondToSenderAsync(object response)

@@ -2,7 +2,7 @@
 
 public partial class RecordingMessageContext
 {
-    List<Sent> sent = new();
+    List<Sent> sent = [];
     public IReadOnlyList<Sent> Sent => sent;
 
     public ValueTask SendAsync<T>(T message, DeliveryOptions? options = null)

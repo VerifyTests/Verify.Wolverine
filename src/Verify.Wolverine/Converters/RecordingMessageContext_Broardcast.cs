@@ -2,7 +2,7 @@
 
 public partial class RecordingMessageContext
 {
-    List<Broadcasted> broardcasted = new();
+    List<Broadcasted> broardcasted = [];
     public IReadOnlyList<Broadcasted> Broardcasted => broardcasted;
 
     public ValueTask BroadcastToTopicAsync(string topic, object message, DeliveryOptions? options = null)

@@ -5,7 +5,7 @@ public delegate T InvokeResult<out T>(object message)
 
 public partial class RecordingMessageContext
 {
-    List<Invoked> invoked = new();
+    List<Invoked> invoked = [];
 
     public IReadOnlyList<Invoked> Invoked => invoked;
 
@@ -18,7 +18,7 @@ public partial class RecordingMessageContext
     internal void AddInvoke(object message, TimeSpan? timeout, string? endpoint = null) =>
         invoked.Add(new(message, timeout, endpoint));
 
-    Dictionary<Type, Func<object, object>> invokeResults = new();
+    Dictionary<Type, Func<object, object>> invokeResults = [];
 
     public void AddInvokeResult<T>(T result) where T : notnull =>
         AddInvokeResult(_ => result);
