@@ -2,7 +2,6 @@
 using Wolverine;
 // ReSharper disable ArrangeObjectCreationWhenTypeNotEvident
 
-[UsesVerify]
 public class Tests
 {
     #region HandlerTest
