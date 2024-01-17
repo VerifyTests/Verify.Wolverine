@@ -50,7 +50,7 @@ public class Handler
         context.SendAsync(new Response("Property Value"));
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L31-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-handler' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L30-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-handler' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -70,7 +70,7 @@ public async Task HandlerTest()
     await Verify(context);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L8-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-handlertest' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L7-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-handlertest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will result in:
@@ -116,7 +116,7 @@ public class Handler
     }
 }
 ```
-<sup><a href='/src/Tests/InvokeDelegateUsage.cs#L27-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-invokeasynchandler' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/InvokeDelegateUsage.cs#L26-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-invokeasynchandler' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The result can be set:
@@ -139,7 +139,7 @@ public async Task HandlerTest()
     await Verify(context);
 }
 ```
-<sup><a href='/src/Tests/InvokeDelegateUsage.cs#L8-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-invokedelegatetest' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/InvokeDelegateUsage.cs#L7-L24' title='Snippet source file'>snippet source</a> | <a href='#snippet-invokedelegatetest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
