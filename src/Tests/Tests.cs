@@ -29,26 +29,16 @@ public class Tests
 
 #region Handler
 
-public class Handler
+public class Handler(IMessageBus context)
 {
-    IMessageContext context;
-
-    public Handler(IMessageContext context) =>
-        this.context = context;
-
     public ValueTask Handle(Message message) =>
         context.SendAsync(new Response("Property Value"));
 }
 
 #endregion
 
-public class AllHandler
+public class AllHandler(IMessageContext context)
 {
-    IMessageContext context;
-
-    public AllHandler(IMessageContext context) =>
-        this.context = context;
-
     public async ValueTask Handle(Message message)
     {
         await context.SendAsync(

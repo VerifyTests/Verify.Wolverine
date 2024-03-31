@@ -39,18 +39,13 @@ Given the handler:
 <!-- snippet: Handler -->
 <a id='snippet-Handler'></a>
 ```cs
-public class Handler
+public class Handler(IMessageBus context)
 {
-    IMessageContext context;
-
-    public Handler(IMessageContext context) =>
-        this.context = context;
-
     public ValueTask Handle(Message message) =>
         context.SendAsync(new Response("Property Value"));
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L30-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-Handler' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L30-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-Handler' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -101,13 +96,8 @@ For example, given the handler:
 <!-- snippet: InvokeAsyncHandler -->
 <a id='snippet-InvokeAsyncHandler'></a>
 ```cs
-public class Handler
+public class Handler(IMessageBus context)
 {
-    IMessageContext context;
-
-    public Handler(IMessageContext context) =>
-        this.context = context;
-
     public async Task Handle(Message message)
     {
         var request = new Request(message.Property);
@@ -116,7 +106,7 @@ public class Handler
     }
 }
 ```
-<sup><a href='/src/Tests/InvokeDelegateUsage.cs#L26-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-InvokeAsyncHandler' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/InvokeDelegateUsage.cs#L26-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-InvokeAsyncHandler' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The result can be set:

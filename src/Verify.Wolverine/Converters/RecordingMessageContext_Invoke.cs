@@ -1,8 +1,5 @@
 ﻿namespace VerifyTests.Wolverine;
 
-public delegate T InvokeResult<out T>(object message)
-    where T: notnull;
-
 public partial class RecordingMessageContext
 {
     List<Invoked> invoked = [];

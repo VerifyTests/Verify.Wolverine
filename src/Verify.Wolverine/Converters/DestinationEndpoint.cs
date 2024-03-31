@@ -1,15 +1,8 @@
 ﻿namespace VerifyTests.Wolverine;
 
-public class DestinationEndpoint : IDestinationEndpoint
+public class DestinationEndpoint(RecordingMessageContext context, string endpoint) :
+    IDestinationEndpoint
 {
-    RecordingMessageContext context;
-
-    public DestinationEndpoint(RecordingMessageContext context, string endpoint)
-    {
-        this.context = context;
-        EndpointName = endpoint;
-    }
-
     public ValueTask SendAsync<T>(T message, DeliveryOptions? options = null)
     {
         context.AddSend(message, options, EndpointName);
@@ -27,5 +20,5 @@ public class DestinationEndpoint : IDestinationEndpoint
         context.AddInvoke<T>(message, timeout, EndpointName);
 
     public Uri Uri => new(EndpointName);
-    public string EndpointName { get; }
+    public string EndpointName { get; } = endpoint;
 }

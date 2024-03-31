@@ -25,13 +25,8 @@ public class InvokeDelegateUsage
 
     #region InvokeAsyncHandler
 
-    public class Handler
+    public class Handler(IMessageBus context)
     {
-        IMessageContext context;
-
-        public Handler(IMessageContext context) =>
-            this.context = context;
-
         public async Task Handle(Message message)
         {
             var request = new Request(message.Property);
