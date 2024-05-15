@@ -7,6 +7,6 @@
     <PackageReference Include="Verify" Version="24.2.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.127" PrivateAssets="all" />
     <PackageReference Include="Polyfill" Version="5.2.2" PrivateAssets="all" />
-    <PackageReference Include="WolverineFx" Version="2.7.0" />
+    <PackageReference Include="WolverineFx" Version="2.8.0" />
   </ItemGroup>
 </Project>
