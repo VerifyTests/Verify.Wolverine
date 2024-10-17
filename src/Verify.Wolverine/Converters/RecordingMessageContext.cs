@@ -5,7 +5,7 @@ public partial class RecordingMessageContext :
 {
     public RecordingMessageContext(object? message = null, PreviewSubscription? previewSubscription = null)
     {
-        this.previewSubscription = previewSubscription ?? (_ => new List<Envelope>());
+        this.previewSubscription = previewSubscription ?? (_ => []);
 
         if (message != null)
         {

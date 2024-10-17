@@ -16,5 +16,6 @@
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.0-pre.35" />
     <!-- explicit to avoid a cve -->
     <PackageVersion Include="System.Text.Json" Version="8.0.5" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
   </ItemGroup>
 </Project>
