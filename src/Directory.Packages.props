@@ -12,7 +12,7 @@
     <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
     <PackageVersion Include="Verify.XunitV3" Version="28.10.1" />
     <PackageVersion Include="WolverineFx" Version="3.8.1" />
-    <PackageVersion Include="xunit.v3" Version="1.0.1" />
+    <PackageVersion Include="xunit.v3" Version="1.1.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.2" />
     <!-- explicit to avoid a cve -->
     <PackageVersion Include="System.Text.Json" Version="8.0.5" />
