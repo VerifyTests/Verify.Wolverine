@@ -6,12 +6,17 @@
 
 Adds [Verify](https://github.com/VerifyTests/Verify) support for verifying [Wolverine](https://github.com/JasperFx/wolverine) via a custom test context.
 
-**See [Milestones](../../milestones?state=closed) for release notes.**
-
 Uses the same pattern as the [Wolverine TestMessageContext](https://wolverine.netlify.app/guide/testing.html#testmessagecontext) with some additions:
 
  * All messaging parameters, eg DeliveryOptions and timeout, can be asserted.
  * Support for `IMessageBus.InvokeAsync<T>` via [AddInvokeResult](#addinvokeresult).
+
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
+
+## Sponsors
+
+include: zzz
 
 
 ## NuGet
