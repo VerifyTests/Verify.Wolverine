@@ -16,7 +16,11 @@ Uses the same pattern as the [Wolverine TestMessageContext](https://wolverine.ne
 
 ## Sponsors
 
-include: zzz
+### Entity Framework Extensions<!-- include: zzz. path: /docs/zzz.include.md -->
+
+[Entity Framework Extensions](https://entityframework-extensions.net/) is a major sponsor and is proud to contribute to the development this project.
+
+[![Entity Framework Extensions](docs/zzz.png)](https://entityframework-extensions.net)<!-- endInclude -->
 
 
 ## NuGet
