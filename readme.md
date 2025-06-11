@@ -14,9 +14,9 @@ Uses the same pattern as the [Wolverine TestMessageContext](https://wolverine.ne
  * Support for `IMessageBus.InvokeAsync<T>` via [AddInvokeResult](#addinvokeresult).
 
 
-## NuGet package
+## NuGet
 
-https://nuget.org/packages/Verify.Wolverine/
+ * https://nuget.org/packages/Verify.Wolverine
 
 
 ## Usage
