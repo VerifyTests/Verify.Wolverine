@@ -16,7 +16,7 @@
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.2" />
     <!-- explicit to avoid a cve -->
-    <PackageVersion Include="System.Text.Json" Version="8.0.5" />
-    <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+    <PackageVersion Include="System.Text.Json" Version="9.0.10" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="9.0.10" />
   </ItemGroup>
 </Project>
