@@ -1,6 +1,4 @@
-﻿using VerifyTests.Wolverine;
-using Wolverine;
-// ReSharper disable ArrangeObjectCreationWhenTypeNotEvident
+﻿// ReSharper disable ArrangeObjectCreationWhenTypeNotEvident
 
 public class Tests
 {
@@ -52,6 +50,8 @@ public class AllHandler(IMessageContext context)
         await context.InvokeAsync(
             new Response("Property Value"),
             timeout: TimeSpan.FromDays(2));
+        await context.ReScheduleCurrentAsync(
+            new DateTimeOffset(2020, 10, 1, 1, 1, 1, TimeSpan.FromHours(10)));
         await context.InvokeAsync<Guid>(
             new Response("Property Value"),
             timeout: TimeSpan.FromDays(2));
