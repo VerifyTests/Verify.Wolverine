@@ -31,6 +31,11 @@
       Endpoint: endpoint
     }
   ],
+  ReScheduled: [
+    {
+      rescheduledAt: DateTimeOffset_2
+    }
+  ],
   Responses: [
     {
       Property: Property Value
@@ -42,7 +47,7 @@
         Property: Property Value
       },
       Options: {
-        DeliverBy: DateTimeOffset_2
+        DeliverBy: DateTimeOffset_3
       }
     },
     {
@@ -50,7 +55,7 @@
         Property: Property Value
       },
       Options: {
-        DeliverBy: DateTimeOffset_3
+        DeliverBy: DateTimeOffset_4
       },
       Endpoint: endpoint
     }

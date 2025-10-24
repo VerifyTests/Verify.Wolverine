@@ -1,6 +1,4 @@
-﻿using VerifyTests.Wolverine;
-using Wolverine;
-// ReSharper disable ArrangeObjectCreationWhenTypeNotEvident
+﻿// ReSharper disable ArrangeObjectCreationWhenTypeNotEvident
 
 public class InvokeDelegateUsage
 {
