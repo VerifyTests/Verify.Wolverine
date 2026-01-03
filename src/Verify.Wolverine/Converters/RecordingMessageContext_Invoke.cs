@@ -27,6 +27,15 @@ public partial class RecordingMessageContext
     public Task<T> InvokeAsync<T>(object message, Cancel cancel = default, TimeSpan? timeout = null) =>
         AddInvoke<T>(message, timeout);
 
+    public Task InvokeAsync(object message, DeliveryOptions options, Cancel cancel = default, TimeSpan? timeout = null)
+    {
+        AddInvoke(message, timeout);
+        return Task.CompletedTask;
+    }
+
+    public Task<T> InvokeAsync<T>(object message, DeliveryOptions options, Cancel cancel = default, TimeSpan? timeout = null) =>
+        AddInvoke<T>(message, timeout);
+
     public Task InvokeForTenantAsync(string tenantId, object message, Cancel cancel = default, TimeSpan? timeout = null)
     {
         invoked.Add(new(message, timeout, null, tenantId));

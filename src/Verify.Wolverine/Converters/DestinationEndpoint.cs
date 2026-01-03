@@ -19,6 +19,9 @@ public class DestinationEndpoint(RecordingMessageContext context, string endpoin
         where T : class =>
         context.AddInvoke<T>(message, timeout, EndpointName);
 
+    public ValueTask SendRawMessageAsync(byte[] data, Type? messageType = null, Action<Envelope>? customize = null) =>
+        ValueTask.CompletedTask;
+
     public Uri Uri => new(EndpointName);
     public string EndpointName { get; } = endpoint;
 }
