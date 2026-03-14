@@ -19,6 +19,16 @@ public class DestinationEndpoint(RecordingMessageContext context, string endpoin
         where T : class =>
         context.AddInvoke<T>(message, timeout, EndpointName);
 
+    public Task<Acknowledgement> InvokeAsync(object message, DeliveryOptions options, Cancel cancel = default, TimeSpan? timeout = null)
+    {
+        context.AddInvoke(message, timeout, EndpointName);
+        return Task.FromResult(new Acknowledgement());
+    }
+
+    public Task<T> InvokeAsync<T>(object message, DeliveryOptions options, Cancel cancel = default, TimeSpan? timeout = null)
+        where T : class =>
+        context.AddInvoke<T>(message, timeout, EndpointName);
+
     public ValueTask SendRawMessageAsync(byte[] data, Type? messageType = null, Action<Envelope>? customize = null) =>
         ValueTask.CompletedTask;
 

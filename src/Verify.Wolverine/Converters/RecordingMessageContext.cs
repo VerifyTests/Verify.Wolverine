@@ -19,4 +19,5 @@ public partial class RecordingMessageContext :
     public string? CorrelationId { get; set; }
     public Envelope? Envelope { get; }
     public string? TenantId { get; set; }
+    public string? UserName { get; set; }
 }
