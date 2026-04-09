@@ -25,7 +25,7 @@ Uses the same pattern as the [Wolverine TestMessageContext](https://wolverine.ne
 
 ### Developed using JetBrains IDEs
 
-[![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSourceSupport)<!-- endInclude -->
+[![JetBrains logo.](https://raw.githubusercontent.com/VerifyTests/Verify.Wolverine/main/docs/jetbrains.png)](https://jb.gg/OpenSourceSupport)<!-- endInclude -->
 
 
 ## NuGet
