@@ -72,5 +72,16 @@ public class AllHandler(IMessageContext context)
         await destination.InvokeAsync(
             new Response("Property Value"),
             timeout: TimeSpan.FromDays(2));
+        await foreach (var _ in context.StreamAsync<Response>(new Response("Property Value")))
+        {
+        }
+        await foreach (var _ in context.StreamAsync<Response>(
+            new Response("Property Value"),
+            new DeliveryOptions
+            {
+                DeliverWithin = TimeSpan.FromDays(4)
+            }))
+        {
+        }
     }
 }

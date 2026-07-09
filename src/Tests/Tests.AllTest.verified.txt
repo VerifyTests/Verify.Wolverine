@@ -59,5 +59,20 @@
       },
       Endpoint: endpoint
     }
+  ],
+  Streamed: [
+    {
+      Message: {
+        Property: Property Value
+      }
+    },
+    {
+      Message: {
+        Property: Property Value
+      },
+      Options: {
+        DeliverBy: DateTimeOffset_5
+      }
+    }
   ]
 }
