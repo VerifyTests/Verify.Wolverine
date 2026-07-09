@@ -1,0 +1,19 @@
+﻿{
+  context: {
+    Streamed: [
+      {
+        Message: {
+          Property: value
+        }
+      }
+    ]
+  },
+  Received: [
+    {
+      Property: Response one
+    },
+    {
+      Property: Response two
+    }
+  ]
+}
