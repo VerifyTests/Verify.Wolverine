@@ -83,5 +83,19 @@ public class AllHandler(IMessageContext context)
             }))
         {
         }
+        await context.StreamAsync<Response, Guid>(Responses());
+        await context.StreamAsync<Response, Guid>(
+            Responses(),
+            new DeliveryOptions
+            {
+                DeliverWithin = TimeSpan.FromDays(5)
+            },
+            timeout: TimeSpan.FromDays(6));
+    }
+
+    static async IAsyncEnumerable<Response> Responses()
+    {
+        await Task.CompletedTask;
+        yield return new("Property Value");
     }
 }

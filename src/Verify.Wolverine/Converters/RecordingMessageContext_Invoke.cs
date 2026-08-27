@@ -49,24 +49,7 @@ public partial class RecordingMessageContext
     {
         invoked.Add(new(message, timeout, endpoint, tenant));
 
-        var type = typeof(T);
-        if (invokeResults.TryGetValue(type, out var func))
-        {
-            return Task.FromResult((T) func(message));
-        }
-
-        if (type.IsValueType)
-        {
-            return Task.FromResult((T)default!);
-        }
-
-        var constructor = type.GetConstructor(Type.EmptyTypes);
-        if (constructor is not null)
-        {
-            return Task.FromResult((T) constructor.Invoke(null));
-        }
-
-        throw new($"Not SetInvokeResult has been defined for {type}");
+        return Task.FromResult(BuildResult<T>(invokeResults, message, nameof(AddInvokeResult)));
     }
 }
 

@@ -74,5 +74,25 @@
         DeliverBy: DateTimeOffset_5
       }
     }
+  ],
+  StreamedRequests: [
+    {
+      Messages: [
+        {
+          Property: Property Value
+        }
+      ]
+    },
+    {
+      Messages: [
+        {
+          Property: Property Value
+        }
+      ],
+      Options: {
+        DeliverBy: DateTimeOffset_6
+      },
+      Timeout: 6.00:00:00
+    }
   ]
 }

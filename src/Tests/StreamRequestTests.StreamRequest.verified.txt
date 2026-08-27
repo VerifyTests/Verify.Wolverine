@@ -1,0 +1,19 @@
+﻿{
+  context: {
+    StreamedRequests: [
+      {
+        Messages: [
+          {
+            Property: value
+          },
+          {
+            Property: value two
+          }
+        ]
+      }
+    ]
+  },
+  response: {
+    Property: Response
+  }
+}
