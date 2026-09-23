@@ -1,7 +1,7 @@
 # <img src="/src/icon.png" height="30px"> Verify.Wolverine
 
 [![Discussions](https://img.shields.io/badge/Verify-Discussions-yellow?svg=true&label=)](https://github.com/orgs/VerifyTests/discussions)
-[![Build status](https://img.shields.io/appveyor/build/SimonCropp/Verify-Wolverine)](https://ci.appveyor.com/project/SimonCropp/Verify-Wolverine)
+[![Build status](https://github.com/VerifyTests/Verify.Wolverine/actions/workflows/build.yml/badge.svg)](https://github.com/VerifyTests/Verify.Wolverine/actions/workflows/build.yml)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Wolverine.svg)](https://www.nuget.org/packages/Verify.Wolverine/)
 
 Adds [Verify](https://github.com/VerifyTests/Verify) support for verifying [Wolverine](https://github.com/JasperFx/wolverine) via a custom test context.<!-- singleLineInclude: intro. path: /docs/intro.include.md -->
