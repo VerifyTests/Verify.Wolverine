@@ -13,12 +13,12 @@
     <PackageVersion Include="Verify.XunitV3" Version="33.3.3" />
     <PackageVersion Include="WolverineFx" Version="6.49.0" />
     <PackageVersion Include="xunit.v3" Version="4.0.2" />
-    <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="10.0.13" />
     <PackageVersion Include="Argon" Version="0.38.2" />
     <PackageVersion Include="DiffEngine" Version="20.8.1" />
     <PackageVersion Include="EmptyFiles" Version="8.20.1" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.1" />
     <!-- explicit to avoid a cve -->
-    <PackageVersion Include="System.Text.Json" Version="10.0.12" />
+    <PackageVersion Include="System.Text.Json" Version="10.0.13" />
   </ItemGroup>
 </Project>
