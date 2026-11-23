@@ -11,7 +11,7 @@
     <PackageVersion Include="Sbom" Version="1.0.0" />
     <PackageVersion Include="Verify" Version="33.7.2" />
     <PackageVersion Include="Verify.XunitV3" Version="33.7.2" />
-    <PackageVersion Include="WolverineFx" Version="6.64.2" />
+    <PackageVersion Include="WolverineFx" Version="6.65.1" />
     <PackageVersion Include="xunit.v3" Version="4.0.3" />
     <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="11.0.0" />
     <PackageVersion Include="Argon" Version="0.38.2" />
